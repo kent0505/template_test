@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class NumberField extends StatelessWidget {
-  const NumberField({
+class TxtField extends StatelessWidget {
+  const TxtField({
     super.key,
     required this.controller,
     required this.hintText,
+    this.active = false,
     required this.onChanged,
   });
 
   final TextEditingController controller;
   final String hintText;
+  final bool active;
   final void Function() onChanged;
 
   @override
@@ -27,10 +29,9 @@ class NumberField extends StatelessWidget {
       ),
       child: TextField(
         controller: controller,
-        keyboardType: TextInputType.number,
         inputFormatters: [
-          FilteringTextInputFormatter.digitsOnly,
-          LengthLimitingTextInputFormatter(6),
+          LengthLimitingTextInputFormatter(20),
+          // FilteringTextInputFormatter.allow(RegExp("[a-zA-Zа-яА-Я]")),
         ],
         textCapitalization: TextCapitalization.sentences,
         style: const TextStyle(
@@ -40,6 +41,10 @@ class NumberField extends StatelessWidget {
           fontFamily: 'SFM',
         ),
         decoration: InputDecoration(
+          suffixIcon: Icon(
+            Icons.check_rounded,
+            color: active ? Colors.greenAccent : Colors.transparent,
+          ),
           contentPadding: const EdgeInsets.symmetric(
             vertical: 0,
             horizontal: 16,

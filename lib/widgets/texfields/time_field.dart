@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class NumberField extends StatelessWidget {
-  const NumberField({
+class TimeField extends StatelessWidget {
+  const TimeField({
     super.key,
     required this.controller,
     required this.hintText,
@@ -11,7 +12,7 @@ class NumberField extends StatelessWidget {
 
   final TextEditingController controller;
   final String hintText;
-  final void Function() onChanged;
+  final void Function(DateTime) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +28,10 @@ class NumberField extends StatelessWidget {
       ),
       child: TextField(
         controller: controller,
-        keyboardType: TextInputType.number,
+        readOnly: true,
         inputFormatters: [
-          FilteringTextInputFormatter.digitsOnly,
-          LengthLimitingTextInputFormatter(6),
+          LengthLimitingTextInputFormatter(20),
+          // FilteringTextInputFormatter.allow(RegExp("[a-zA-Zа-яА-Я]")),
         ],
         textCapitalization: TextCapitalization.sentences,
         style: const TextStyle(
@@ -61,8 +62,21 @@ class NumberField extends StatelessWidget {
         onTapOutside: (event) {
           FocusManager.instance.primaryFocus?.unfocus();
         },
-        onChanged: (value) {
-          onChanged();
+        onTap: () async {
+          await showCupertinoModalPopup(
+            context: context,
+            builder: (context) {
+              return Container(
+                color: Colors.grey,
+                height: 300,
+                child: CupertinoDatePicker(
+                  onDateTimeChanged: onChanged,
+                  use24hFormat: true,
+                  mode: CupertinoDatePickerMode.time,
+                ),
+              );
+            },
+          );
         },
       ),
     );
