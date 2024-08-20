@@ -1,0 +1,28 @@
+{
+  "" : {
+    "diagnostics" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/Runner-master.dia",
+    "emit-module-dependencies" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/Runner-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/Runner-master-emit-module.dia",
+    "swift-dependencies" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/Runner-master.swiftdeps"
+  },
+  "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/jbk/Desktop/otaw/template_test/ios/Runner/AppDelegate.swift" : {
+    "const-values" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/AppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/AppDelegate.d",
+    "diagnostics" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/AppDelegate.dia",
+    "index-unit-output-path" : "/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/AppDelegate.o",
+    "llvm-bc" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/AppDelegate.bc",
+    "object" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/AppDelegate.o",
+    "swift-dependencies" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/AppDelegate.swiftdeps",
+    "swiftmodule" : "/Users/jbk/Desktop/otaw/template_test/ios/build/Runner.build/Debug-iphonesimulator/Runner.build/Objects-normal/arm64/AppDelegate~partial.swiftmodule"
+  }
+}

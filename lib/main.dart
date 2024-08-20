@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import 'widgets/core/utils.dart';
+import 'core/utils.dart';
 import 'widgets/texfields/number_field.dart';
 import 'widgets/texfields/pincode_field.dart';
 import 'widgets/texfields/time_field.dart';
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
-          SizedBox(height: MediaQuery.of(context).viewPadding.top),
+          SizedBox(height: statusBar(context)),
           const SizedBox(height: 20),
           TxtField(
             controller: controller1,
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
             hintText: '00:00',
             onChanged: (date) {
               setState(() {
-                controller4.text = formatDateTime(date);
+                controller4.text = dateTimeToString(date);
               });
             },
           ),

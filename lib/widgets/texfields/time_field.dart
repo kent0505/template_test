@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:proyekt10/core/utils.dart';
 
 class TimeField extends StatelessWidget {
   const TimeField({
@@ -32,6 +33,7 @@ class TimeField extends StatelessWidget {
         inputFormatters: [
           LengthLimitingTextInputFormatter(20),
           // FilteringTextInputFormatter.allow(RegExp("[a-zA-Zа-яА-Я]")),
+          // FilteringTextInputFormatter.digitsOnly,
         ],
         textCapitalization: TextCapitalization.sentences,
         style: const TextStyle(
@@ -67,10 +69,11 @@ class TimeField extends StatelessWidget {
             context: context,
             builder: (context) {
               return Container(
-                color: Colors.grey,
+                color: Colors.white,
                 height: 300,
                 child: CupertinoDatePicker(
                   onDateTimeChanged: onChanged,
+                  initialDateTime: stringToDateTime(controller.text),
                   use24hFormat: true,
                   mode: CupertinoDatePickerMode.time,
                 ),

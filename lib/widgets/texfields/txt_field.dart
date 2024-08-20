@@ -32,6 +32,7 @@ class TxtField extends StatelessWidget {
         inputFormatters: [
           LengthLimitingTextInputFormatter(20),
           // FilteringTextInputFormatter.allow(RegExp("[a-zA-Zа-яА-Я]")),
+          // FilteringTextInputFormatter.digitsOnly,
         ],
         textCapitalization: TextCapitalization.sentences,
         style: const TextStyle(

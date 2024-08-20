@@ -31,6 +31,7 @@ class NumberField extends StatelessWidget {
         inputFormatters: [
           FilteringTextInputFormatter.digitsOnly,
           LengthLimitingTextInputFormatter(6),
+          // FilteringTextInputFormatter.allow(RegExp("[a-zA-Zа-яА-Я]")),
         ],
         textCapitalization: TextCapitalization.sentences,
         style: const TextStyle(
