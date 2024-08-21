@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:proyekt10/widgets/texfields/date_field.dart';
 
 import 'core/utils.dart';
 import 'widgets/texfields/number_field.dart';
@@ -33,17 +34,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final controller1 = TextEditingController();
-  final controller2 = TextEditingController();
-  final controller3 = TextEditingController();
-  final controller4 = TextEditingController();
+  final controller1 = TextEditingController(); // txt
+  final controller2 = TextEditingController(); // number
+  final controller3 = TextEditingController(); // pincode
+  final controller4 = TextEditingController(); // time
+  final controller5 = TextEditingController(); // date
   final errorController = StreamController<ErrorAnimationType>();
 
   bool active = false;
 
   void checkActive() {
     setState(() {
-      active = getButtonActive([controller1]);
+      active = getButtonActive([
+        controller1,
+        controller2,
+        controller4,
+      ]);
     });
   }
 
@@ -67,7 +73,6 @@ class _HomePageState extends State<HomePage> {
           TxtField(
             controller: controller1,
             hintText: 'Txt',
-            active: active,
             onChanged: checkActive,
           ),
           const SizedBox(height: 20),
@@ -89,11 +94,13 @@ class _HomePageState extends State<HomePage> {
           TimeField(
             controller: controller4,
             hintText: '00:00',
-            onChanged: (date) {
-              setState(() {
-                controller4.text = dateTimeToString(date);
-              });
-            },
+            onChanged: () {},
+          ),
+          const SizedBox(height: 20),
+          DateField(
+            controller: controller5,
+            hintText: '22.06.2000',
+            onChanged: () {},
           ),
         ],
       ),

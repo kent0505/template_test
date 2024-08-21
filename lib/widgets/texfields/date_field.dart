@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../core/utils.dart';
 
-class TimeField extends StatefulWidget {
-  const TimeField({
+class DateField extends StatefulWidget {
+  const DateField({
     super.key,
     required this.controller,
     required this.hintText,
@@ -16,13 +16,13 @@ class TimeField extends StatefulWidget {
   final void Function() onChanged;
 
   @override
-  State<TimeField> createState() => _TimeFieldState();
+  State<DateField> createState() => _DateFieldState();
 }
 
-class _TimeFieldState extends State<TimeField> {
+class _DateFieldState extends State<DateField> {
   void onDateTimeChanged(DateTime date) {
     setState(() {
-      widget.controller.text = timeToString(date);
+      widget.controller.text = dateToString(date);
     });
     widget.onChanged();
   }
@@ -80,9 +80,10 @@ class _TimeFieldState extends State<TimeField> {
                 height: 300,
                 child: CupertinoDatePicker(
                   onDateTimeChanged: onDateTimeChanged,
-                  initialDateTime: stringToTime(widget.controller.text),
-                  use24hFormat: true,
-                  mode: CupertinoDatePickerMode.time,
+                  initialDateTime: stringToDate(widget.controller.text),
+                  mode: CupertinoDatePickerMode.date,
+                  minimumYear: 2000,
+                  maximumYear: DateTime.now().year,
                 ),
               );
             },

@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class TxtField extends StatelessWidget {
+class TxtField extends StatefulWidget {
   const TxtField({
     super.key,
     required this.controller,
     required this.hintText,
-    this.active = false,
     required this.onChanged,
   });
 
   final TextEditingController controller;
   final String hintText;
-  final bool active;
   final void Function() onChanged;
+
+  @override
+  State<TxtField> createState() => _TxtFieldState();
+}
+
+class _TxtFieldState extends State<TxtField> {
+  bool active = false;
+
+  void checkActive() {
+    setState(() {
+      widget.controller.text.isEmpty ? active = false : active = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +39,7 @@ class TxtField extends StatelessWidget {
         ),
       ),
       child: TextField(
-        controller: controller,
+        controller: widget.controller,
         inputFormatters: [
           LengthLimitingTextInputFormatter(20),
           // FilteringTextInputFormatter.allow(RegExp("[a-zA-Zа-яА-Я]")),
@@ -50,7 +61,7 @@ class TxtField extends StatelessWidget {
             vertical: 0,
             horizontal: 16,
           ),
-          hintText: hintText,
+          hintText: widget.hintText,
           hintStyle: const TextStyle(
             color: Colors.grey,
             fontSize: 14,
@@ -68,7 +79,8 @@ class TxtField extends StatelessWidget {
           FocusManager.instance.primaryFocus?.unfocus();
         },
         onChanged: (value) {
-          onChanged();
+          checkActive();
+          widget.onChanged();
         },
       ),
     );
